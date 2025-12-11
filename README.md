@@ -374,67 +374,21 @@ The implemented system provides a robust foundation for autonomous robot securit
 
 ### **A.1 Code Repository Structure**
 ```
-project/
-├── data/
-│   ├── raw/                  # Original CSV files
-│   ├── processed/           # Cleaned datasets
-│   └── splits/              # Train/val/test splits
-├── models/
-│   ├── xgboost_model.pkl
-│   ├── cnn_model.h5
-│   ├── lstm_model.h5
-│   ├── vae_model.h5
-│   ├── fnn_model.h5
-│   └── svm_model.pkl
-├── notebooks/
-│   ├── 01_data_preprocessing.ipynb
-│   ├── 02_model_training.ipynb
-│   └── 03_xai_analysis.ipynb
-├── src/
-│   ├── preprocessing.py
-│   ├── models.py
-│   ├── evaluation.py
-│   └── explainability.py
-├── results/
-│   ├── plots/              # All visualizations
-│   ├── metrics/            # Performance metrics
-│   └── shap_values/        # SHAP explanations
-├── requirements.txt
-├── README.md
-└── run_pipeline.py        # Complete pipeline script
 ```
 
 ### **A.2 Environment Setup**
-```bash
-# Required libraries
-pip install numpy==1.21.0 pandas==1.3.0 matplotlib==3.5.0 seaborn==0.11.0
-pip install scikit-learn==1.0.0 xgboost==1.5.0 tensorflow==2.8.0
-pip install shap==0.40.0 lime==0.2.0.1
 ```
-
-### **A.3 Running the Pipeline**
-```python
-# Complete execution
-python run_pipeline.py --all
-
-# Individual components
-python run_pipeline.py --preprocess
-python run_pipeline.py --train --models xgboost cnn
-python run_pipeline.py --explain --model xgboost
+no setup required.
+Just run the commands in the notebook in order 
 ```
 
 ### **A.4 Hardware Specifications**
-- **CPU**: Intel Core i7
-- **RAM**: 16GB
-- **GPU**: NVIDIA RTX 3060 (for deep learning)
-- **Storage**: 50GB required
-- **Runtime**: ~2 hours for complete pipeline
+Colab's GPU :)
 
 ### **A.5 Contact Information**
-- **Student**: [YOUR NAME]
-- **Email**: [YOUR EMAIL]
-- **GitHub**: [YOUR GITHUB LINK]
-- **Submission ID**: [ASSIGNMENT ID]
+- **Student**: [Tanzeela Sehar]
+- **Email**: [muc.555@gmail.com]
+- **GitHub**: [tselane2110]
 
 ---
 
