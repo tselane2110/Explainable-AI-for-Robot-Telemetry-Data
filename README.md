@@ -169,11 +169,11 @@ Should've perfomed but didn't due to time constraints
 ## **MODEL EVALUATION**
 
 ### **3.1 Performance Metrics (Class-wise) Comparison**
-* **XGBoost**: Doesnt show the best results but will improve later
+* **XGBoost**: Doesnt show the best results but will improve later </br>
 <img width="432" height="197" alt="image" src="https://github.com/user-attachments/assets/9e34b356-bd76-4353-b929-58406f684198" /> </br>
-* **1D-CNN**:
+* **1D-CNN**: </br>
 <img width="439" height="197" alt="image" src="https://github.com/user-attachments/assets/c69f078d-e574-4b9b-a223-d93aa8c0a882" /> </br>
-* **FNN**:
+* **FNN**:</br>
 <img width="435" height="189" alt="image" src="https://github.com/user-attachments/assets/3c3f52fc-2427-41c0-a7a1-cccaf40a18d5" /> </br>
 
 ---
