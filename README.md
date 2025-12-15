@@ -14,13 +14,17 @@
 
 ## **EXECUTIVE SUMMARY**
 
-This project implements a comprehensive machine learning pipeline for anomaly detection in robot/drone telemetry data. Following assignment guidelines, we implemented and evaluated **six machine learning models** (LSTM, 1D-CNN, SVM, XGBoost, VAE, and FNN) and performed extensive **Explainable AI (XAI)** analysis using SHAP, LIME, and other interpretability techniques. The system successfully classifies telemetry data into three categories: **Normal Operation**, **DoS Attack**, and **Malfunction**, achieving [X]% average accuracy across models while providing interpretable insights into model decisions.
+This project implements a comprehensive machine learning pipeline for anomaly detection in robot/drone telemetry data. In accordance with the assignment requirements for **even-numbered roll numbers**, this report focuses on the implementation and evaluation of three specific models: **1D-CNN, XGBoost, and Feedforward Neural Network (FNN)**.
 
-**Key Achievements:**
-- Implemented 3 even-numbered models with hyperparameter tuning
-- Handled challenging data issues (95% sparsity in some sensors)
-- Applied multiple XAI techniques (SHAP, LIME, PDP, Feature Importance)
-- Provided actionable insights for robotics security and maintenance
+The system is designed to classify telemetry data into three distinct categories: **Normal Operation**, **DoS Attack**, and **Malfunction**. Despite facing significant data quality challenges—specifically **95% sparsity** across most sensor readings—the project successfully utilized aggressive feature selection to train robust classifiers.
+
+**Key Achievements & Findings:**
+
+* **High Performance:** The **FNN model** emerged as the top performer, achieving approximately **97.6% accuracy** on the test set.
+* **XAI Insights:** Explainable AI analysis (focused on XGBoost) revealed that the models rely heavily on **GPS coordinates (Longitude/Latitude)** to detect anomalies. This indicates the system effectively identified *where* attacks occurred, but may require additional system health metrics (CPU, RAM) to generalize to new locations.
+* **Data Handling:** Successfully processed a heterogeneous dataset with extreme missing values by narrowing the focus to high-reliability features like GPS and timestamps.
+
+This report details the preprocessing steps, model architectures, and a critical analysis of why the models prioritized spatial data over system performance metrics.
 
 ---
 
