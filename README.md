@@ -6,12 +6,9 @@
 1. [Executive Summary](#executive-summary)
 2. [Introduction](#introduction)
 3. [Data Preprocessing](#data-preprocessing)
-4. [Model Implementation](#model-implementation)
-5. [Model Evaluation](#model-evaluation)
-6. [Explainable AI Analysis](#explainable-ai-analysis)
-7. [Conclusion](#conclusion)
-8. [References](#references)
-9. [Appendix](#appendix)
+4. [Model Evaluation](#model-evaluation)
+5. [Explainable AI Analysis](#explainable-ai-analysis)
+6. [Appendix](#appendix)
 
 ---
 
