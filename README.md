@@ -178,11 +178,80 @@ Should've perfomed but didn't due to time constraints
 
 ---
 
-## **EXPLAINABLE AI ANALYSIS**
+## EXPLAINABLE AI ANALYSIS
+Based on the analysis in the provided notebook, here is the report for the Explainable AI (XAI) section, followed by a conclusion of the overall project results.
+
+* **Models Analyzed:** XGBoost
+* **Classification Task:** 3 Classes (Normal, DoS Attack, Malfunction)
+* **Features Available:** 6 (after preprocessing)
+
+### 4.1 Most Important Features
+The analysis identified the top features driving the model's predictions, ranked by importance:
+
+1. **`setpoint_raw-global_longitude`** (Importance: ~0.497)
+2. **`setpoint_raw-global_latitude`** (Importance: ~0.292)
+3. **`setpoint_raw-global_Time`** (Importance: ~0.136)
+4. **`setpoint_raw-global_altitude`** (Importance: ~0.058)
+5. **`setpoint_raw-global_header.seq`** (Importance: ~0.016)
+
+### 4.2 Key Findings
+* **Dominance of GPS:** GPS coordinates (longitude and latitude) are the strongest predictors, accounting for the vast majority of the model's decision-making power.
+* **Temporal Relevance:** Temporal features (Time) show moderate importance, suggesting the timing of events provides necessary context.
+* **Positional Reliance:** The model heavily discriminates between classes based on position data.
+
+### 4.3 Interpretation of Results
+**The dominance of GPS coordinates suggests that:**
+* **Location Patterns:** Specific location patterns are key differentiators between normal flight, attacks, and malfunctions.
+* **Spatial Correlations:** Denial of Service (DoS) attacks and malfunctions may be occurring in specific geographic locations or along specific flight paths.
+* **Context:** Time stamps likely help sequence these events, distinguishing isolated incidents from sustained attacks.
+
+### 4.4 Model Decision-Making Process
+
+1. **Check Position:** It first evaluates position data (Latitude/Longitude).
+2. **Check Time:** It then considers the temporal context (Timestamp/Sequence).
+3. **Check Altitude:** Finally, it evaluates altitude and other secondary parameters.
+
+### 4.5 Practical Implications
+* **For Anomaly Detection:**
+* Monitor flight paths for unusual concentrations of activity in specific locations.
+* Use position data as the primary indicator for flagging potential threats.
+
+
+* **For System Design:**
+* GPS/position sensors are critical components for this security application.
+* Ensuring the accuracy of timestamps is vital for the secondary validation layer.
+
+
+### 4.6 Limitations & Recommendations
+* **Limitations:** The model relies heavily on position data, which may limit its ability to generalize to new locations. It currently lacks visibility into system metrics like CPU or RAM usage.
+* **Recommendations:**
+* **Collect More Data:** Incorporate sensor data such as CPU load, RAM usage, battery levels, and network traffic to create a more robust profile.
+* **Location Independence:** Implement anomaly detection that isn't solely tied to specific coordinates to improve generalization.
+* **Ensemble Methods:** Combine position-based models with system-performance models for multi-source verification.
+
+---
+
+## 5. Conclusion of Overall Results
+The project successfully trained and evaluated machine learning models to detect anomalies in robot telemetry data.
+
+5.1 **Model Performance:**
+* The **Feedforward Neural Network (FNN)** achieved high performance, reaching approximately **97.6% accuracy** on the test set and **98% accuracy** on the validation set.
+* The **XGBoost** model served as the core for the Explainable AI analysis, demonstrating high confidence (e.g., 99.99%) in its classifications.
+
+
+5.2 **Critical Insights:**
+* The primary differentiator for detecting DoS attacks and malfunctions in this specific dataset is **spatial data** (Longitude/Latitude).
+* **DoS Attacks** and **Malfunctions** exhibited distinct feature averages compared to **Normal** flights. For instance, DoS attacks were associated with specific average longitude/latitude values significantly different from normal patterns.
+
+
+5.3 **Final Verdict:**
+While the models are highly accurate, their heavy reliance on GPS coordinates indicates they are learning *where* attacks happen rather than *how* they manifest in system performance (like CPU spikes). To make the system robust against attacks in *new* locations, future iterations must prioritize system health metrics (CPU, RAM, Battery) over raw geospatial coordinates.
+
 ## **APPENDIX**
 
 ### **A.1 Code Repository Structure**
 ```
+super simple 
 ```
 
 ### **A.2 Environment Setup**
